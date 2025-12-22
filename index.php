@@ -8,7 +8,9 @@ require_once "partials/header.php";
 
 
 <main class="bg-main-color min-h-svh flex flex-col items-center justify-center overflow-hidden">
-    <div class="w-[80%] flex-1 flex flex-col items-center justify-around">
+
+    <!-- main container -->
+    <div class="w-80% flex-1 flex flex-col items-center justify-around">
         <?php require_once "partials/logo.php";  ?>
         <?php require_once "partials/start_button.php";  ?>
     </div>

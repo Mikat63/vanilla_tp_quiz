@@ -16,19 +16,6 @@
 }
 
 /* text classes */
-.text_font {
-  font-family: "Inter", sans-serif;
-  font-weight: normal;
-  color: white;
-  font-size: 20px;
-}
-
-.title_font {
-  font-family: "Manrope", sans-serif;
-  font-weight: 600;
-  color: white;
-  font-size: 24px;
-}
 
 /* background class */
 .bg-main-color {
