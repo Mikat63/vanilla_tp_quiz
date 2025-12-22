@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- general meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Un quiz fun et stimulant pour défier vos amis et enrichir votre culture générale.">
+    <meta name="author" content="Mika">
+
+    <!-- font meta -->
+    <link rel="preload" href="FONTS/Manrope/static/Manrope-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="FONTS/Inter/static/Inter_18pt-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- CSS & JS links -->
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+    <title><?= $title ?></title>
+
+    <!-- Open Graph meta -->
+    <meta property="og:title" content="Brain Quiz - Testez vos connaissances !">
+    <meta property="og:description" content="Un quiz fun et stimulant pour défier vos amis et enrichir votre culture générale.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="#">
+    <meta property="og:image" content="img/quiz/og-image.jpg">
+
+    <!-- Balise son ld+json (données structurées) -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "BRAIN QUIZ",
+            "url": "#",
+            "description": "Un quiz fun et stimulant pour défier vos amis et enrichir votre culture générale.",
+            "author": {
+                "@type": "Person",
+                "name": "Mika"
+            },
+            "image": "#"
+        }
+    </script>
+</head>
+
+<body>

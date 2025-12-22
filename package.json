@@ -1,0 +1,25 @@
+{
+  "name": "vanilla-tp-quizz---brain-quiz",
+  "version": "1.0.0",
+  "description": "Application ludique et interactive de quiz entre joueurs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mikat63/vanilla_tp_quiz.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mikat63/vanilla_tp_quiz/issues"
+  },
+  "homepage": "https://github.com/Mikat63/vanilla_tp_quiz#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.23",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.18"
+  }
+}

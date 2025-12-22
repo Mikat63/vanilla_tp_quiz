@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Manrope";
+  src: url("FONTS/Manrope/static/Manrope-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("FONTS/inter/static/Inter_18pt-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --background-main-color: linear-gradient(to bottom, #0b0a4c, #4b169d);
+  --button-color: linear-gradient(to bottom, #00e6ff, #0053bc);
+  --main_font: "Inter",sans-serif;
+  --title_font: "Manrope",sans-serif;
+}
