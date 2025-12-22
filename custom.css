@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* fonts import */
 @font-face {
   font-family: "Manrope";
   src: url("FONTS/Manrope/static/Manrope-Regular.woff2") format("woff2");
@@ -9,14 +10,43 @@
 
 @font-face {
   font-family: "Inter";
-  src: url("FONTS/inter/static/Inter_18pt-Regular.woff2") format("woff2");
+  src: url("FONTS/Inter/static/Inter_18pt-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
-:root {
-  --background-main-color: linear-gradient(to bottom, #0b0a4c, #4b169d);
-  --button-color: linear-gradient(to bottom, #00e6ff, #0053bc);
-  --main_font: "Inter",sans-serif;
-  --title_font: "Manrope",sans-serif;
+/* text classes */
+.text_font {
+  font-family: "Inter", sans-serif;
+  font-weight: normal;
+  color: white;
+  font-size: 20px;
+}
+
+.title_font {
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  color: white;
+  font-size: 24px;
+}
+
+/* background class */
+.bg-main-color {
+  background: linear-gradient(to bottom, #0b0a4c, #4b169d);
+}
+
+.bg_button_color {
+  background: linear-gradient(to bottom, #00e6ff, #0053bc);
+}
+
+.bg_button_color {
+  background: linear-gradient(to bottom, #00e6ff, #0053bc);
+  transition: background 0.3s;
+}
+
+.bg_button_color:hover,
+.bg_button_color:focus {
+  background: linear-gradient(to bottom, #0053bc, #00e6ff);
+  /* Inverse le gradient pour l'effet */
+  filter: brightness(1.1);
 }

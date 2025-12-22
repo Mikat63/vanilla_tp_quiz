@@ -1,9 +1,17 @@
 <?php
+$title = "Accueil";
+$buttonLink = "connexion.php";
+$ariaDescription = "Commencer le quiz";
+$textButton = "Commencer";
 require_once "partials/header.php";
 ?>
 
-<main>
 
+<main class="bg-main-color min-h-svh flex flex-col items-center justify-center overflow-hidden">
+    <div class="w-[80%] flex-1 flex flex-col items-center justify-around">
+        <?php require_once "partials/logo.php";  ?>
+        <?php require_once "partials/start_button.php";  ?>
+    </div>
 </main>
 
 <?php

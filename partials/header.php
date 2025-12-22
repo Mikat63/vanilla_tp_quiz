@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <!-- general meta -->
@@ -7,15 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Un quiz fun et stimulant pour défier vos amis et enrichir votre culture générale.">
     <meta name="author" content="Mika">
-
-    <!-- font meta -->
-    <link rel="preload" href="FONTS/Manrope/static/Manrope-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="FONTS/Inter/static/Inter_18pt-Regular.woff2" as="font" type="font/woff2" crossorigin>
-
-    <!-- CSS & JS links -->
-    <link rel="stylesheet" href="style.css">
-    <script defer src="main.js"></script>
-    <title><?= $title ?></title>
 
     <!-- Open Graph meta -->
     <meta property="og:title" content="Brain Quiz - Testez vos connaissances !">
@@ -36,9 +27,20 @@
                 "@type": "Person",
                 "name": "Mika"
             },
-            "image": "#"
+            "image": "img/brain_q_logo.webp"
         }
     </script>
+
+    <!-- font meta -->
+    <link rel="preload" href="FONTS/Manrope/static/Manrope-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="FONTS/Inter/static/Inter_18pt-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- CSS & JS links -->
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+    <title><?= "BRAIN QUIZ - $title" ?></title>
+
+
 </head>
 
 <body>
