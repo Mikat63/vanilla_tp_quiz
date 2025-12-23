@@ -11,7 +11,7 @@ require_once "partials/page_infos.php";
 <main class="min-h-svh flex flex-col items-center justify-center">
 
     <!-- main container -->
-    <div class="w-[80%] flex-1 flex flex-col items-center justify-around">
+    <div class="w-[80%] flex-1 flex flex-col items-center justify-between pb-8">
         <?php require_once "partials/logo.php";  ?>
         <?php require_once "partials/start_button.php";  ?>
     </div>

@@ -38,10 +38,10 @@ require_once "partials/page_infos.php";
 
             <!-- answers container -->
             <div class="w-full h-auto gap-2 flex flex-col items-center">
-                <button class="w-full h-auto bg-[#0879C9] rounded-lg text-white text-[20px] p-2">Test</button>
-                <button class="w-full h-auto bg-[#0879C9] rounded-lg text-white text-[20px] p-2">Test</button>
-                <button class="w-full h-auto bg-[#0879C9] rounded-lg text-white text-[20px] p-2">Test</button>
-                <button class="w-full h-auto bg-[#0879C9] rounded-lg text-white text-[20px] p-2">Test</button>
+                <button class="w-full h-auto bg-[#0879C9] rounded-lg text-white text-[20px] p-2 cursor-pointer">Test</button>
+                <button class="w-full h-auto bg-[#0879C9] rounded-lg text-white text-[20px] p-2 cursor-pointer">Test</button>
+                <button class="w-full h-auto bg-[#0879C9] rounded-lg text-white text-[20px] p-2 cursor-pointer">Test</button>
+                <button class="w-full h-auto bg-[#0879C9] rounded-lg text-white text-[20px] p-2 cursor-pointer">Test</button>
             </div>
         </div>
     </div>

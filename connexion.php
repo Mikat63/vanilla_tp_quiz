@@ -7,12 +7,14 @@ require_once "partials/header.php";
 
 
 
-<main class="flex flex-col items-center justify-center ">
+<main class="min-h-svh flex flex-col items-center justify-between ">
     <!-- back button -->
 
     <!-- main container -->
-    <div class="w-[80%] h-auto flex flex-col items-center gap-24 ">
+    <div class="w-[80%] flex flex-col items-center gap-24 justify-between ">
+
         <?php require_once "partials/logo.php" ?>
+
 
         <!-- connexion with pseudo -->
         <form class="flex flex-col items-center gap-6" action="process/Connexion.php" method="POST">
