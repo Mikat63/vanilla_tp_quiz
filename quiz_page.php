@@ -15,12 +15,19 @@ require_once "partials/page_infos.php";
     </div>
 </header>
 
-<main class="flex flex-col items-center pt-8 gap-4 sm:gap-8 lg:gap-16 2xl:gap-24">
+<main class="flex flex-col items-center opacity-100 gap-4 sm:gap-8 lg:gap-16 2xl:gap-24">
+
+
     <!-- main container -->
-    <div class="w-[70%]  flex flex-col items-center gap-8  lg:gap-11 sm:w-[40%] lg:w-[30%] 2xl:w-[20%] ">
+    <div class="w-[70%] flex flex-col items-center gap-8 lg:gap-11 sm:w-[40%] lg:w-[30%] 2xl:w-[20%] ">
+
+        <!-- progression bar  -->
+        <div class="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700 mt-4">
+            <div id="timer-bar" class="bg-green-600 h-4 rounded-full transition-all duration-100" style="width: 100%"></div>
+        </div>
 
         <!-- quiz container -->
-        <div class="w-full flex flex-col justify-center gap-4 ">
+        <div id="quiz_container" class="w-full flex flex-col justify-center gap-4 ">
             <div class="w-full h-60">
                 <img class="w-full h-full object-cover" src="img/quiz_animals/quiz_animals_cover.webp" alt="">
             </div>
@@ -29,12 +36,12 @@ require_once "partials/page_infos.php";
                 <p>Quel est cet animal si beau ? </p>
             </div>
 
-            <div class="w-full h-auto gap-4 flex flex-col items-center">
+            <!-- answers container -->
+            <div class="w-full h-auto gap-2 flex flex-col items-center">
                 <button class="w-full h-auto bg-[#0879C9] rounded-lg text-white text-[20px] p-2">Test</button>
                 <button class="w-full h-auto bg-[#0879C9] rounded-lg text-white text-[20px] p-2">Test</button>
                 <button class="w-full h-auto bg-[#0879C9] rounded-lg text-white text-[20px] p-2">Test</button>
                 <button class="w-full h-auto bg-[#0879C9] rounded-lg text-white text-[20px] p-2">Test</button>
-
             </div>
         </div>
     </div>

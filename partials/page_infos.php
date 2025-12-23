@@ -43,4 +43,4 @@
 
 </head>
 
-<body class="min-h-svh bg-gradient-to-b from-[#0b0a4c] to-[#4b169d]">
+<body class="min-h-svh bg-linear-to-b from-[#0b0a4c] to-[#4b169d]">
