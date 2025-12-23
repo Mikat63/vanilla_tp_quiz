@@ -1,46 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <!-- general meta -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Un quiz fun et stimulant pour défier vos amis et enrichir votre culture générale.">
-    <meta name="author" content="Mika">
-
-    <!-- Open Graph meta -->
-    <meta property="og:title" content="Brain Quiz - Testez vos connaissances !">
-    <meta property="og:description" content="Un quiz fun et stimulant pour défier vos amis et enrichir votre culture générale.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="#">
-    <meta property="og:image" content="img/quiz/og-image.jpg">
-
-    <!-- Balise son ld+json (données structurées) -->
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "BRAIN QUIZ",
-            "url": "#",
-            "description": "Un quiz fun et stimulant pour défier vos amis et enrichir votre culture générale.",
-            "author": {
-                "@type": "Person",
-                "name": "Mika"
-            },
-            "image": "img/brain_q_logo.webp"
-        }
-    </script>
-
-    <!-- font meta -->
-    <link rel="preload" href="FONTS/Manrope/static/Manrope-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="FONTS/Inter/static/Inter_18pt-Regular.woff2" as="font" type="font/woff2" crossorigin>
-
-    <!-- CSS & JS links -->
-    <link rel="stylesheet" href="style.css">
-    <script defer src="main.js"></script>
-    <title><?= "BRAIN QUIZ - $title" ?></title>
-
-
-</head>
-
-<body>
+<header class="flex w-full p-2 items-center justify-between">
+    <div class="w-10 flex flex-col items-center">
+        <a tabindex="0" href="<?= $backLink ?>" aria-label="Retourner à la page précédente" class="transition focus:scale-150 hover:scale-150"><img src="img/back_button.webp" alt="bouton retour"></a>
+    </div>
+</header>

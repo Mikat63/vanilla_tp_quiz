@@ -14,26 +14,3 @@
   font-weight: normal;
   font-style: normal;
 }
-
-/* text classes */
-
-/* background class */
-.bg-main-color {
-  background: linear-gradient(to bottom, #0b0a4c, #4b169d);
-}
-
-.bg_button_color {
-  background: linear-gradient(to bottom, #00e6ff, #0053bc);
-}
-
-.bg_button_color {
-  background: linear-gradient(to bottom, #00e6ff, #0053bc);
-  transition: background 0.3s;
-}
-
-.bg_button_color:hover,
-.bg_button_color:focus {
-  background: linear-gradient(to bottom, #0053bc, #00e6ff);
-  /* Inverse le gradient pour l'effet */
-  filter: brightness(1.1);
-}

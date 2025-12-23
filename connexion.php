@@ -1,16 +1,17 @@
 <?php
 $title = "Connexion";
 $backLink = "index.php";
+require_once "partials/page_infos.php";
 require_once "partials/header.php";
 ?>
 
 
-<main class="bg-main-color min-h-svh flex flex-col items-center justify-center overflow-hidden">
+
+<main class="flex flex-col items-center justify-center ">
     <!-- back button -->
-    <?php require_once "partials/back_button.php" ?>
 
     <!-- main container -->
-    <div class="w-[80%] flex-1 flex flex-col items-center justify-around">
+    <div class="w-[80%] h-auto flex flex-col items-center gap-24 ">
         <?php require_once "partials/logo.php" ?>
 
         <!-- connexion with pseudo -->
@@ -20,7 +21,7 @@ require_once "partials/header.php";
             </div>
 
             <div class="flex flex-col items-center">
-                <button type="submit" class="font-[Inter] text-white text-base lg:text-xl bg_button_color w-32 p-2 rounded-md flex items-center justify-center cursor-pointer">Valider</button>
+                <button type="submit" class="font-[Inter] text-white text-base w-32 p-2 rounded-md flex items-center justify-center cursor-pointer bg-linear-to-b from-cyan-300 to-blue-800 transition duration-300 hover:from-blue-800 hover:to-cyan-300 hover:brightness-110 focus:from-blue-800 focus:to-cyan-300 focus:brightness-110 lg:text-xl">Valider</button>
             </div>
         </form>
     </div>

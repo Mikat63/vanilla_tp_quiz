@@ -1,3 +1,3 @@
 <?php
 
-header('location: ../choiceQuiz.php');
+header('location: ../choice_quiz.php');
