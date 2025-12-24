@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const duration = 10;
   const bar = document.querySelector("#timer-bar");
   const quizContainer = document.querySelector("#quiz_container");
-
   if (!bar) {
     return;
   }
@@ -25,16 +24,17 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       bar.style.width = "0%";
 
-      quizContainer.classList.add(
-        "opacity-0",
-        "transition-opacity",
-        "duration-5000"
-      );
+      setTimeout(() => {
+        quizContainer.classList.add(
+          "opacity-0",
+          "transition-opacity",
+          "duration-4000"
+        );
+      }, 2000);
 
-      // redirection after setimeour
       setTimeout(() => {
         window.location = "quiz_page.php";
-      }, 2000);
+      }, 6000);
     }
   }
 

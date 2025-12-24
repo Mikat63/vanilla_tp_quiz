@@ -27,7 +27,7 @@ require_once "partials/page_infos.php";
         </div>
 
         <!-- quiz container -->
-        <div id="quiz_container" class="w-full flex flex-col justify-center gap-4 opacity-0 transition-opacity duration-2000">
+        <div id="quiz_container" class="w-full flex flex-col justify-center gap-4 ">
             <div class="w-full h-60">
                 <img
                     class="w-full h-full object-cover"
@@ -43,25 +43,15 @@ require_once "partials/page_infos.php";
 
             <!-- answers container -->
             <div class="w-full h-auto gap-2 flex flex-col items-center">
-                <button class="w-full h-auto bg-[#0879C9] rounded-lg text-white text-[20px] p-2 cursor-pointer focus:scale-110 focus:outline-0">Test</button>
-                <button class="w-full h-auto bg-[#0879C9] rounded-lg text-white text-[20px] p-2 cursor-pointer focus:scale-110 focus:outline-0">Test</button>
-                <button class="w-full h-auto bg-[#0879C9] rounded-lg text-white text-[20px] p-2 cursor-pointer focus:scale-110 focus:outline-0">Test</button>
-                <button class="w-full h-auto bg-[#0879C9] rounded-lg text-white text-[20px] p-2 cursor-pointer focus:scale-110 focus:outline-0">Test</button>
+                <?php
+                $answer = "test";
+                require "partials/answer_button.php";
+                require "partials/answer_button.php";
+                require "partials/answer_button.php";
+                require "partials/answer_button.php" ?>
             </div>
         </div>
-    </div>
 </main>
-
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const quizContainer = document.getElementById("quiz_container");
-        setTimeout(() => {
-            quizContainer.classList.remove("opacity-0");
-            quizContainer.classList.add("opacity-100");
-        }, 50);
-    });
-</script>
 
 <?php
 require_once "partials/footer.php";
