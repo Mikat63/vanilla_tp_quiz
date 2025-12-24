@@ -45,10 +45,20 @@ require_once "partials/page_infos.php";
             <div class="w-full h-auto gap-2 flex flex-col items-center">
                 <?php
                 $answer = "test";
-                require "partials/answer_button.php";
-                require "partials/answer_button.php";
-                require "partials/answer_button.php";
-                require "partials/answer_button.php" ?>
+                require "partials/answer_button.php"
+                ?>
+                <?php
+                $answer = "test";
+                require "partials/answer_button.php"
+                ?>
+                <?php
+                $answer = "test";
+                require "partials/answer_button.php"
+                ?>
+                <?php
+                $answer = "test";
+                require "partials/answer_button.php"
+                ?>
             </div>
         </div>
 </main>

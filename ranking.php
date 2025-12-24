@@ -22,23 +22,28 @@ require_once "partials/page_infos.php";
 
                 <!-- podium -->
                 <div class="w-full flex flex-row justify-between ">
-                    <div tabindex="0" aria-label="Troisième position" class="w-[33%] flex flex-col items-center justify-end focus:scale-125 focus:outline-0">
-                        <p class=" font-[Manrope] text-white text-[24px] font-bold">j3</p>
-                        <p class="font-[Manrope] text-yellow-400 text-[20px] font-semibold">SCORE</p>
-                        <div class="w-12 h-12 bg-white px-2"></div>
-                    </div>
+                    <?php
+                    $player = "J3";
+                    $scorePlayer = "score";
+                    $heightPodium = "h-12";
+                    require "partials/podium.php";
+                    ?>
 
-                    <div tabindex="0" aria-label="première position" class="w-[33%] flex flex-col items-center justify-end focus:scale-125 focus:outline-0">
-                        <p class=" font-[Manrope] text-white text-[24px] font-bold">j3</p>
-                        <p class="font-[Manrope] text-yellow-400 text-[20px] font-semibold">SCORE</p>
-                        <div class="w-12 h-20 bg-white px-2"></div>
-                    </div>
+                    <?php
+                    $player = "J2";
+                    $scorePlayer = "score";
+                    $heightPodium = "h-20";
+                    require "partials/podium.php";
+                    ?>
 
-                    <div tabindex="0" aria-label="seconde position" class="w-[33%] flex flex-col items-center justify-end focus:scale-125 focus:outline-0">
-                        <p class=" font-[Manrope] text-white text-[24px] font-bold">j3</p>
-                        <p class="font-[Manrope] text-yellow-400 text-[20px] font-semibold">SCORE</p>
-                        <div class="w-12 h-16 bg-white px-2"></div>
-                    </div>
+                    <?php
+                    $player = "J1";
+                    $scorePlayer = "score";
+                    $heightPodium = "h-16";
+                    require "partials/podium.php";
+                    ?>
+
+
                 </div>
 
                 <div class="w-full h-auto flex flex-col gap-2">
