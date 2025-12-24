@@ -18,8 +18,8 @@ require_once "partials/header.php";
 
         <!-- connexion with pseudo -->
         <form class="flex flex-col items-center gap-6" action="process/Connexion.php" method="POST">
-            <div class="flex flex-col items-center w-full">
-                <input class=" bg-white placeholder-black text-center" type="text" minlength="3" maxlength="30" placeHolder="Entrez votre pseudo">
+            <div class="flex flex-col items-center w-full ">
+                <input tabindex="0" class=" bg-white placeholder-black text-center focus:bg-gray-200" type="text" minlength="3" maxlength="30" placeHolder="Entrez votre pseudo">
             </div>
 
             <div class="flex flex-col items-center">

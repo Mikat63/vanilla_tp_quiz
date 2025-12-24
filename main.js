@@ -28,12 +28,13 @@ document.addEventListener("DOMContentLoaded", function () {
       quizContainer.classList.add(
         "opacity-0",
         "transition-opacity",
-        "duration-1000"
+        "duration-5000"
       );
 
+      // redirection after setimeour
       setTimeout(() => {
         window.location = "quiz_page.php";
-      }, 5000);
+      }, 2000);
     }
   }
 
