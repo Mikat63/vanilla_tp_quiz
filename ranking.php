@@ -14,10 +14,18 @@ require_once "partials/page_infos.php";
     </div>
 
     <!-- main container -->
-    <div class="w-[80%] flex flex-col items-center pb-6 md:w-[70%] lg:w-[50%] 2xl:w-[30%]">
+    <div class="w-[80%] flex flex-col items-center gap-8 pb-6 md:w-[70%] lg:w-[50%] 2xl:w-[30%]">
+
+        <div class="w-full h-auto flex flex-col justify-center items-center">
+            <p class="font-[Manrope] text-[28px] font-semibold text-yellow-400">Meilleur score</p>
+            <p class="font-[Manrope] text-[24px] font-semibold text-white">score</p>
+        </div>
+
         <!-- podium container  -->
         <div class="w-full h-auto flex flex-col gap-8">
             <div class="w-full h-auto flex flex-col items-center gap-8 sm:flex-row">
+
+
                 <!-- podium -->
                 <div class="w-[80%] flex flex-row justify-between ">
                     <?php

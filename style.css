@@ -329,6 +329,12 @@
   .gap-24 {
     gap: calc(var(--spacing) * 24);
   }
+  .gap-\[16px\] {
+    gap: 16px;
+  }
+  .gap-\[32px\] {
+    gap: 32px;
+  }
   .truncate {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -441,6 +447,9 @@
   }
   .text-\[24px\] {
     font-size: 24px;
+  }
+  .text-\[28px\] {
+    font-size: 28px;
   }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
