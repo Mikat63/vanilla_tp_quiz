@@ -7,10 +7,10 @@ require_once "partials/header.php";
 
 
 
-<main class=" min-h-svh flex flex-col items-center gap-8 justify-center overflow-hidden py-8">
+<main class="min-h-svh flex flex-col items-center gap-8 justify-center overflow-hidden py-8">
     <!-- main container -->
     <div class="w-[80%] flex-1 flex flex-col items-center gap-8 pb-8 lg:gap-11">
-        <h2 class="font-[Manrope] font-medium text-white text-2xl lg:text-4xl">Choisissez un quiz</h2>
+        <h2 class="text-2xl font-[Manrope] font-medium text-white lg:text-4xl">Choisissez un quiz</h2>
 
         <!-- quiz container -->
         <div class="w-[80%] max-w-6xl mx-auto flex flex-col items-center gap-8 md:w-full md:flex-row md:justify-around lg:flex-col">

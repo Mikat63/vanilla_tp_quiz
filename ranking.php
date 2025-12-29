@@ -9,19 +9,17 @@ require_once "partials/page_infos.php";
 
 
 <main class="min-h-svh flex flex-col items-center">
+    <div>
+        <?php require_once "partials/logo.php" ?>
+    </div>
 
     <!-- main container -->
-    <div class="w-[80%] md:w-[50%]  lg:w-[50%] xl:w-[40%] 2xl:w-[30%] flex flex-col items-center pb-6">
-        <div>
-            <?php require_once "partials/logo.php" ?>
-        </div>
-
+    <div class="w-[80%] flex flex-col items-center pb-6 md:w-[70%] lg:w-[50%] 2xl:w-[30%]">
         <!-- podium container  -->
         <div class="w-full h-auto flex flex-col gap-8">
-            <div class=" w-full h-auto flex flex-col items-center gap-8">
-
+            <div class="w-full h-auto flex flex-col items-center gap-8 sm:flex-row">
                 <!-- podium -->
-                <div class="w-full flex flex-row justify-between ">
+                <div class="w-[80%] flex flex-row justify-between ">
                     <?php
                     $player = "J3";
                     $scorePlayer = "score";
@@ -42,52 +40,64 @@ require_once "partials/page_infos.php";
                     $heightPodium = "h-16";
                     require "partials/podium.php";
                     ?>
-
-
                 </div>
 
                 <div class="w-full h-auto flex flex-col gap-2">
-                    <div tabindex="0" aria-label="Quatrième position" class="w-full h-auto flex flex-row justify-between bg-white rounded-lg text-black font-[Inter] text-[16px] p-2 focus:scale-105 focus:outline-0">
-                        <p class="flex flex-col items-center">position</p>
-                        <p class="flex flex-col items-center">pseudo</p>
-                        <p class="flex flex-col items-center">score</p>
-                    </div>
+                    <?php
+                    $ariaLabelPosition = "Quatrième position";
+                    $position = "4e";
+                    $player = "Pseudo";
+                    $score = "Score";
+                    require "partials/ranking.php";
+                    ?>
 
-                    <div tabindex="0" aria-label="Cinquième position" class="w-full h-auto flex flex-row justify-between bg-white rounded-lg text-black font-[Inter] text-[16px] p-2 focus:scale-105 focus:outline-0">
-                        <p class="flex flex-col items-center">position</p>
-                        <p class="flex flex-col items-center">pseudo</p>
-                        <p class="flex flex-col items-center">score</p>
-                    </div>
+                    <?php
+                    $ariaLabelPosition = "Cinquième position";
+                    $position = "5e";
+                    $player = "Pseudo";
+                    $score = "Score";
+                    require "partials/ranking.php";
+                    ?>
 
-                    <div tabindex="0" aria-label="Sixième position" class="w-full h-auto flex flex-row justify-between bg-white rounded-lg text-black font-[Inter] text-[16px] p-2 focus:scale-105 focus:outline-0">
-                        <p class="flex flex-col items-center">position</p>
-                        <p class="flex flex-col items-center">pseudo</p>
-                        <p class="flex flex-col items-center">score</p>
-                    </div>
+                    <?php
+                    $ariaLabelPosition = "Sixième position";
+                    $position = "6e";
+                    $player = "Pseudo";
+                    $score = "Score";
+                    require "partials/ranking.php";
+                    ?>
 
-                    <div tabindex="0" aria-label="Septième position" class="w-full h-auto flex flex-row justify-between bg-white rounded-lg text-black font-[Inter] text-[16px] p-2 focus:scale-105 focus:outline-0">
-                        <p class="flex flex-col items-center">position</p>
-                        <p class="flex flex-col items-center">pseudo</p>
-                        <p class="flex flex-col items-center">score</p>
-                    </div>
+                    <?php
+                    $ariaLabelPosition = "Septième position";
+                    $position = "7e";
+                    $player = "Pseudo";
+                    $score = "Score";
+                    require "partials/ranking.php";
+                    ?>
 
-                    <div tabindex="0" aria-label="Huitième position" class="w-full h-auto flex flex-row justify-between bg-white rounded-lg text-black font-[Inter] text-[16px] p-2 focus:scale-105 focus:outline-0">
-                        <p class="flex flex-col items-center">position</p>
-                        <p class="flex flex-col items-center">pseudo</p>
-                        <p class="flex flex-col items-center">score</p>
-                    </div>
+                    <?php
+                    $ariaLabelPosition = "Huitième position";
+                    $position = "8e";
+                    $player = "Pseudo";
+                    $score = "Score";
+                    require "partials/ranking.php";
+                    ?>
 
-                    <div tabindex="0" aria-label="Neuvième position" class="w-full h-auto flex flex-row justify-between bg-white rounded-lg text-black font-[Inter] text-[16px] p-2 focus:scale-105 focus:outline-0">
-                        <p class="flex flex-col items-center">position</p>
-                        <p class="flex flex-col items-center">pseudo</p>
-                        <p class="flex flex-col items-center">score</p>
-                    </div>
+                    <?php
+                    $ariaLabelPosition = "Neuvième position";
+                    $position = "9e";
+                    $player = "Pseudo";
+                    $score = "Score";
+                    require "partials/ranking.php";
+                    ?>
 
-                    <div tabindex="0" aria-label="Dixième position" class="w-full h-auto flex flex-row justify-between bg-white rounded-lg text-black font-[Inter] text-[16px] p-2 focus:scale-105 focus:outline-0">
-                        <p class="flex flex-col items-center">position</p>
-                        <p class="flex flex-col items-center">pseudo</p>
-                        <p class="flex flex-col items-center">score</p>
-                    </div>
+                    <?php
+                    $ariaLabelPosition = "Dixième position";
+                    $position = "10e";
+                    $player = "Pseudo";
+                    $score = "Score";
+                    require "partials/ranking.php";
+                    ?>
                 </div>
             </div>
 
