@@ -17,28 +17,28 @@ require_once "partials/header.php";
             <!-- container with 3 quiz cards links -->
             <div class="w-full flex flex-col items-center gap-8 lg:flex-row">
                 <?php
-                $imgQuiz = "img/quiz_animals/quiz_animals_cover.webp";
+                $imgQuiz = "img/quiz_animals/quiz_animals_cover_1024.webp";
                 $altMessage = "quiz sur les animaux";
                 $quizName = "Animaux";
-                $srcSet = "img/quiz_animals/quiz_animals_cover_600.webp 600w,img/quiz_animals/quiz_animals_cover.webp 1024w ";
+                $srcSet = "img/quiz_animals/quiz_animals_cover_600.webp 600w,img/quiz_animals/quiz_animals_cover_1024.webp 1024w ";
                 $sizes = "(max-width: 600px) 600px, 1024px";
                 require "partials/quiz_card.php";
                 ?>
 
                 <?php
-                $imgQuiz = "img/quiz_cinema/quiz_cinema_cover.webp";
+                $imgQuiz = "img/quiz_cinema/quiz_cinema_cover_1024.webp";
                 $altMessage = "quiz sur le cinéma";
                 $quizName = "Cinéma";
-                $srcSet = "img/quiz_cinema/quiz_cinema_cover_600.webp 600w,img/quiz_cinema/quiz_cinema_cover.webp 1024w ";
+                $srcSet = "img/quiz_cinema/quiz_cinema_cover_600.webp 600w,img/quiz_cinema/quiz_cinema_cover_1024.webp 1024w ";
                 $sizes = "(max-width: 600px) 600px, 1024px";
                 require "partials/quiz_card.php";
                 ?>
 
                 <?php
-                $imgQuiz = "img/quiz_litterature/quiz_litterature_cover.webp";
+                $imgQuiz = "img/quiz_litterature/quiz_litterature_cover_1024.webp";
                 $altMessage = "quiz sur la litterature";
                 $quizName = "Littérature";
-                $srcSet = "img/quiz_litterature/quiz_litterature_cover_600.webp 600w,img/quiz_litterature/quiz_litterature_cover.webp 1024w ";
+                $srcSet = "img/quiz_litterature/quiz_litterature_cover_600.webp 600w,img/quiz_litterature/quiz_litterature_cover_1024.webp 1024w ";
                 $sizes = "(max-width: 600px) 600px, 1024px";
                 require "partials/quiz_card.php";
                 ?>
@@ -47,29 +47,29 @@ require_once "partials/header.php";
             <!-- container with 3 quiz cards links -->
             <div class="w-full flex flex-col items-center gap-8 lg:flex-row">
                 <?php
-                $imgQuiz = "img/quiz_music/quiz_music_cover.webp";
+                $imgQuiz = "img/quiz_music/quiz_music_cover_1024.webp";
                 $altMessage = "quiz sur la musique";
                 $quizName = "Musique";
-                $srcSet = "img/quiz_music/quiz_music_cover_600.webp 600w,img/quiz_music/quiz_music_cover.webp 1024w ";
+                $srcSet = "img/quiz_music/quiz_music_cover_600.webp 600w,img/quiz_music/quiz_music_cover_1024.webp 1024w ";
                 $sizes = "(max-width: 600px) 600px, 1024px";
 
                 require "partials/quiz_card.php";
                 ?>
 
                 <?php
-                $imgQuiz = "img/quiz_science/quiz_science_cover.webp";
+                $imgQuiz = "img/quiz_science/quiz_science_cover_1024.webp";
                 $altMessage = "quiz sur la science";
                 $quizName = "Science";
-                $srcSet = "img/quiz_science/quiz_science_cover_600.webp 600w,img/quiz_science/quiz_science_cover.webp 1024w ";
+                $srcSet = "img/quiz_science/quiz_science_cover_600.webp 600w,img/quiz_science/quiz_science_cover_1024.webp 1024w ";
                 $sizes = "(max-width: 600px) 600px, 1024px";
                 require "partials/quiz_card.php";
                 ?>
 
                 <?php
-                $imgQuiz = "img/quiz_sport/quiz_sport_cover.webp";
+                $imgQuiz = "img/quiz_sport/quiz_sport_cover_1024.webp";
                 $altMessage = "quiz sur le sport";
                 $quizName = "Sport";
-                $srcSet = "img/quiz_sport/quiz_sport_cover_600.webp 600w,img/quiz_sport/quiz_sport_cover.webp 1024w ";
+                $srcSet = "img/quiz_sport/quiz_sport_cover_600.webp 600w,img/quiz_sport/quiz_sport_cover_1024.webp 1024w ";
                 $sizes = "(max-width: 600px) 600px, 1024px";
 
                 require "partials/quiz_card.php";
