@@ -50,6 +50,7 @@ $user = $request->fetch();
 if ($user) {
     $_SESSION['user_id'] = $user['id'];
     header("location: ../choice_quiz.php");
+    exit;
 } else {
     $request = $db->prepare(
         "INSERT INTO users (user)
@@ -63,4 +64,5 @@ if ($user) {
     $_SESSION['user_id'] = $db->lastInsertId();
 
     header("location: ../choice_quiz.php");
+    exit;
 }

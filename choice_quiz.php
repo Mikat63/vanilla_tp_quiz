@@ -1,8 +1,21 @@
 <?php
+session_start();
 $title = "Choix du quiz";
 $backLink = "connexion.php";
+
 require_once "partials/page_infos.php";
 require_once "partials/header.php";
+require_once "process/db_connect.php";
+
+
+$request = $db->query(
+    'SELECT
+                            *
+                        from
+                            themes'
+);
+
+$themes = $request->fetchAll();
 ?>
 
 
@@ -22,6 +35,8 @@ require_once "partials/header.php";
                 $quizName = "Animaux";
                 $srcSet = "img/quiz_animals/quiz_animals_cover_600.webp 600w,img/quiz_animals/quiz_animals_cover_1024.webp 1024w ";
                 $sizes = "(max-width: 600px) 600px, 1024px";
+                $themeId = "1";
+                
                 require "partials/quiz_card.php";
                 ?>
 
@@ -31,6 +46,8 @@ require_once "partials/header.php";
                 $quizName = "Cinéma";
                 $srcSet = "img/quiz_cinema/quiz_cinema_cover_600.webp 600w,img/quiz_cinema/quiz_cinema_cover_1024.webp 1024w ";
                 $sizes = "(max-width: 600px) 600px, 1024px";
+                $themeId = "2";
+                
                 require "partials/quiz_card.php";
                 ?>
 
@@ -40,6 +57,8 @@ require_once "partials/header.php";
                 $quizName = "Littérature";
                 $srcSet = "img/quiz_litterature/quiz_litterature_cover_600.webp 600w,img/quiz_litterature/quiz_litterature_cover_1024.webp 1024w ";
                 $sizes = "(max-width: 600px) 600px, 1024px";
+                $themeId = "3";
+                
                 require "partials/quiz_card.php";
                 ?>
             </div>
@@ -52,7 +71,8 @@ require_once "partials/header.php";
                 $quizName = "Musique";
                 $srcSet = "img/quiz_music/quiz_music_cover_600.webp 600w,img/quiz_music/quiz_music_cover_1024.webp 1024w ";
                 $sizes = "(max-width: 600px) 600px, 1024px";
-
+                $themeId = "4";
+                
                 require "partials/quiz_card.php";
                 ?>
 
@@ -62,6 +82,8 @@ require_once "partials/header.php";
                 $quizName = "Science";
                 $srcSet = "img/quiz_science/quiz_science_cover_600.webp 600w,img/quiz_science/quiz_science_cover_1024.webp 1024w ";
                 $sizes = "(max-width: 600px) 600px, 1024px";
+                $themeId = "5";
+
                 require "partials/quiz_card.php";
                 ?>
 
@@ -71,6 +93,7 @@ require_once "partials/header.php";
                 $quizName = "Sport";
                 $srcSet = "img/quiz_sport/quiz_sport_cover_600.webp 600w,img/quiz_sport/quiz_sport_cover_1024.webp 1024w ";
                 $sizes = "(max-width: 600px) 600px, 1024px";
+                $themeId = "6";
 
                 require "partials/quiz_card.php";
                 ?>
