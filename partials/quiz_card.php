@@ -1,9 +1,9 @@
-<a href="process/theme_question_quiz.php?id=<?= $themeId ?>" class="w-full cursor-pointer focus:scale-110" aria-label=<?= " aller vers le quiz $quizName" ?>>
-    <ivd class="w-full flex flex-col gap-4 justify-center">
+<a href="process/theme_questions_quiz.php?id=<?= $themeId ?>" class="w-full cursor-pointer focus:scale-110" aria-label=<?= " aller vers le quiz $quizName" ?>>
+    <div class="w-full flex flex-col gap-4 justify-center">
         <div class="w-full h-60">
             <img class="w-full h-full object-cover" src="<?= $imgQuiz ?>" alt="<?= $altMessage ?>" loading="lazy" srcset="<?= $srcSet ?>" sizes="<?= $sizes ?>">
         </div>
 
         <h3 class="w-full text-base text-center truncate font-[Inter] text-white lg:text-xl"><?= $quizName ?></h3>
-    </ivd>
+    </div>
 </a>

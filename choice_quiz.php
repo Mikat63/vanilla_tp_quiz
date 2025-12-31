@@ -36,7 +36,7 @@ $themes = $request->fetchAll();
                 $srcSet = "img/quiz_animals/quiz_animals_cover_600.webp 600w,img/quiz_animals/quiz_animals_cover_1024.webp 1024w ";
                 $sizes = "(max-width: 600px) 600px, 1024px";
                 $themeId = "1";
-                
+
                 require "partials/quiz_card.php";
                 ?>
 
@@ -47,7 +47,7 @@ $themes = $request->fetchAll();
                 $srcSet = "img/quiz_cinema/quiz_cinema_cover_600.webp 600w,img/quiz_cinema/quiz_cinema_cover_1024.webp 1024w ";
                 $sizes = "(max-width: 600px) 600px, 1024px";
                 $themeId = "2";
-                
+
                 require "partials/quiz_card.php";
                 ?>
 
@@ -58,7 +58,7 @@ $themes = $request->fetchAll();
                 $srcSet = "img/quiz_litterature/quiz_litterature_cover_600.webp 600w,img/quiz_litterature/quiz_litterature_cover_1024.webp 1024w ";
                 $sizes = "(max-width: 600px) 600px, 1024px";
                 $themeId = "3";
-                
+
                 require "partials/quiz_card.php";
                 ?>
             </div>
@@ -72,7 +72,7 @@ $themes = $request->fetchAll();
                 $srcSet = "img/quiz_music/quiz_music_cover_600.webp 600w,img/quiz_music/quiz_music_cover_1024.webp 1024w ";
                 $sizes = "(max-width: 600px) 600px, 1024px";
                 $themeId = "4";
-                
+
                 require "partials/quiz_card.php";
                 ?>
 

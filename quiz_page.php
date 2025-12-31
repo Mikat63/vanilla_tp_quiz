@@ -11,7 +11,7 @@ require_once "partials/page_infos.php";
     </div>
 
     <div class="w-auto h-auto flex flex-col items-center px-2 border border-solid border-white rounded-sm font-[Manrope] text-white ">
-        <p class="flex flex-col items-center p-1">10/10</p>
+        <p id="counter_question" class="flex flex-col items-center p-1"></p>
     </div>
 </header>
 
@@ -25,34 +25,19 @@ require_once "partials/page_infos.php";
         <!-- quiz container -->
         <div id="quiz_container" class="w-full flex flex-col gap-4 justify-center ">
             <div class="w-full h-60">
-                <img
+                <img id="img_question"
                     class="w-full h-full object-cover"
                     src="img/quiz_animals/quiz_animals_cover.webp"
-                    srcset="img/quiz_animals/quiz_animals_cover_600.webp 600w, img/quiz_animals/quiz_animals_cover.webp 1024w"
+                    srcset=" 600w,  1024w"
                     sizes="(max-width: 600px) 600px, 1024px"
                     alt="">
             </div>
             <div class="w-full h-auto text-[20px] text-center font-[Inter] text-white lg:text-xl">
-                <p>Quel est cet animal si beau ? </p>
+                <p id="question"> </p>
             </div>
             <!-- answers container -->
-            <div class="w-full h-auto flex flex-col gap-2 items-center">
-                <?php
-                $answer = "test";
-                require "partials/answer_button.php"
-                ?>
-                <?php
-                $answer = "test";
-                require "partials/answer_button.php"
-                ?>
-                <?php
-                $answer = "test";
-                require "partials/answer_button.php"
-                ?>
-                <?php
-                $answer = "test";
-                require "partials/answer_button.php"
-                ?>
+            <div id="answer_container" class="w-full h-auto flex flex-col gap-2 items-center">
+
             </div>
         </div>
 </main>
