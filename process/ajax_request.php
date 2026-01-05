@@ -27,20 +27,28 @@ $answer = htmlspecialchars(strip_tags($_POST['answer']));
 // db connect and query for have all questions and answers by theme selected
 require_once "db_connect.php";
 
-$request = $db->prepare(
-    'SELECT 
-                            q.*,
-                            a.*
+if (!isset($_SESSION['questions'])) {
+    $request = $db->prepare(
+        'SELECT 
+                            q.id AS question_id,
+                            q.questions,
+                            q.img_path_600,
+                            q.img_path_desktop,
+                            q.id_theme,
+                            a.id AS answer_id,
+                            a.answer,
+                            a.id_question,
+                            a.good_answer
                          FROM
                             questions AS q
                         JOIN answers AS a ON a.id_question = q.id
-                        WHERE id_themes = :theme_quiz'
-);
+                        WHERE id_themes = :theme_quiz
+                        ORDER BY q.id, a.id'
+    );
 
-$request->execute([
-    'theme_quiz' => $_SESSION['theme']['id']
-]);
+    $request->execute([
+        'theme_quiz' => $_SESSION['theme']['id']
+    ]);
 
-$questionsAnswers = $request->fetchAll();
-
-// return to js
+    $_SESSION['questions'] = $request->fetchAll();
+}

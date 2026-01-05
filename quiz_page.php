@@ -37,6 +37,21 @@ require_once "partials/page_infos.php";
             </div>
             <!-- answers container -->
             <div id="answer_container" class="w-full h-auto flex flex-col gap-2 items-center">
+                <?php $answer = "test";
+                require "partials/answer_button.php";
+                ?>
+
+                <?php $answer = "test";
+                require "partials/answer_button.php";
+                ?>
+
+                <?php $answer = "test";
+                require "partials/answer_button.php";
+                ?>
+
+                <?php $answer = "test";
+                require "partials/answer_button.php";
+                ?>
 
             </div>
         </div>
