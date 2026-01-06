@@ -1,4 +1,6 @@
 <?php
+session_start();
+// var_dump($_SESSION['questions'][$_SESSION['question_number']]);
 $title = "quiz";
 $backLink = "choice_quiz.php";
 require_once "partials/page_infos.php";
@@ -11,7 +13,7 @@ require_once "partials/page_infos.php";
     </div>
 
     <div class="w-auto h-auto flex flex-col items-center px-2 border border-solid border-white rounded-sm font-[Manrope] text-white ">
-        <p id="counter_question" class="flex flex-col items-center p-1"></p>
+        <p id="counter_question" class="flex flex-col items-center p-1"><?= $_SESSION['question_number'] + 1 . "/" . count($_SESSION['questions']) ?></p>
     </div>
 </header>
 
@@ -27,31 +29,25 @@ require_once "partials/page_infos.php";
             <div class="w-full h-60">
                 <img id="img_question"
                     class="w-full h-full object-cover"
-                    src="img/quiz_animals/quiz_animals_cover.webp"
-                    srcset=" 600w,  1024w"
+                    src="<?= $_SESSION['questions'][$_SESSION['question_number']]['img_path_desktop'] ?>"
+                    srcset="<?= $_SESSION['questions'][$_SESSION['question_number']]['img_path_mobile'] ?> 600w, <?= $_SESSION['questions'][$_SESSION['question_number']]['img_path_desktop'] ?> 1024w"
                     sizes="(max-width: 600px) 600px, 1024px"
                     alt="">
             </div>
             <div class="w-full h-auto text-[20px] text-center font-[Inter] text-white lg:text-xl">
-                <p id="question"> </p>
+                <p id="question"><?= $_SESSION['questions'][$_SESSION['question_number']]['question'] ?> </p>
             </div>
             <!-- answers container -->
             <div id="answer_container" class="w-full h-auto flex flex-col gap-2 items-center">
-                <?php $answer = "test";
-                require "partials/answer_button.php";
+                <?php
+                foreach ($_SESSION['questions'][$_SESSION['question_number']]['answers'] as $answer) {
+                    $answerText = $answer['answer'];
+                    $dataAnswer = $answer['id'];
+                    require "partials/answer_button.php";
+                }
+
                 ?>
 
-                <?php $answer = "test";
-                require "partials/answer_button.php";
-                ?>
-
-                <?php $answer = "test";
-                require "partials/answer_button.php";
-                ?>
-
-                <?php $answer = "test";
-                require "partials/answer_button.php";
-                ?>
 
             </div>
         </div>

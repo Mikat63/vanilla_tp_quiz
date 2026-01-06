@@ -3,8 +3,6 @@ const imgQuestion = document.querySelector("#img_question");
 const question = document.querySelector("#question");
 const answerBtn = document.querySelectorAll("#answer_btn");
 
-let index = 0;
-
 function http_request() {
   fetch("process/ajax_request.php", {
     method: "POST",
