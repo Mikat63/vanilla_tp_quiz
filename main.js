@@ -6,16 +6,14 @@ const answerBtn = document.querySelectorAll("#answer_btn");
 function http_request() {
   fetch("process/ajax_request.php", {
     method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: "question=" + index,
+    headers: { "Content-Type": "application/json" },
+    
   })
     .then((response) => response.json())
     .then((data) => {});
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  http_request();
-});
+
 
 // progression bar
 const duration = 10;

@@ -43,12 +43,10 @@ require_once "partials/page_infos.php";
                 foreach ($_SESSION['questions'][$_SESSION['question_number']]['answers'] as $answer) {
                     $answerText = $answer['answer'];
                     $dataAnswer = $answer['id'];
+                    $dataQuestion = $_SESSION['questions'][$_SESSION['question_number']]['id'];
                     require "partials/answer_button.php";
                 }
-
                 ?>
-
-
             </div>
         </div>
 </main>

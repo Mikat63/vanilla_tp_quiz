@@ -4,8 +4,6 @@ $title = "Score";
 require_once "partials/page_infos.php";
 require_once "process/db_connect.php";
 
-var_dump($_SESSION);
-
 // query for the  best score
 $request = $db->prepare(
     'SELECT 
@@ -23,7 +21,8 @@ $request->execute([
 
 $userScore = $request->fetch();
 
-// Save score: INSERT if new, UPDATE if betterif (!$userScore) {
+// Save score: INSERT if new, UPDATE if better
+if (!$userScore) {
     $request = $db->prepare(
         'INSERT INTO 
                 users_themes(id_user,id_theme,user_score)
@@ -39,7 +38,7 @@ $userScore = $request->fetch();
         'theme_id' => $_SESSION['theme']['id'],
         'score_user' => $_SESSION['score']
     ]);
-} else if ($_SESSION['score'] > $userScore['user_score']) {
+} elseif ($_SESSION['score'] > $userScore['user_score']) {
     $request = $db->prepare(
         'UPDATE 
                 users_themes
@@ -54,9 +53,9 @@ $userScore = $request->fetch();
         'player_id' => $_SESSION['user_id'],
         'theme_id' => $_SESSION['theme']['id']
     ]);
-};
+}
 
-// Re-fetch thescore query for best score 
+// Re-fetch the score query for best score 
 $request = $db->prepare(
     'SELECT 
         user_score
