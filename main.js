@@ -84,7 +84,11 @@ function showResulAnswer(data) {
       imgQuestion.sizes = "(max-width: 600px) 600px, 1024px";
       question.textContent = data.question;
 
-      answersBtn.textContent = data.answers;
+      answersBtn.forEach((answerBtn, index) => {
+        console.log(answerBtn, index);
+        console.log(data.answers[index]);
+        answerBtn.textContent = data.answers[index].answer;
+      });
     }, 4000);
   }, 2000);
 }

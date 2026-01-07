@@ -50,20 +50,17 @@ $goodAnswerId = null;
 foreach ($_SESSION['questions'][$_SESSION['question_number']]['answers'] as $answer) {
     if ((int)$answer['good_answer'] === 1) {
         $goodAnswerId = $answer['id'];
-        break;
     }
-}
 
-// Ensuite vérifier celle cliquée
-foreach ($_SESSION['questions'][$_SESSION['question_number']]['answers'] as $answer) {
     if ((int)$answer['id'] === $dataAnswer) {
         $is_correct = ((int)$answer['good_answer'] === 1);
         if ($is_correct) {
             $_SESSION['score'] += 10;
         }
-        break;
     }
 }
+
+
 
 if ($is_correct === null) {
     echo json_encode(['error' => 'not an answer for this question']);
@@ -81,7 +78,7 @@ echo json_encode([
     'is_correct' => $is_correct,
     'id_answer' => $goodAnswerId,
     'clicked_answer' => $dataAnswer,
-    'next_question' => $_SESSION['question_number'] . '/' . count($_SESSION['questions']),
+    'next_question' => $_SESSION['question_number'] + 1 . '/' . count($_SESSION['questions']),
     'id_question' => $_SESSION['questions'][$_SESSION['question_number']]['id'],
     'question' => $_SESSION['questions'][$_SESSION['question_number']]['question'],
     'img_mobile' => $_SESSION['questions'][$_SESSION['question_number']]['img_path_mobile'],
