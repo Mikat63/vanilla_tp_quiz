@@ -1,6 +1,8 @@
 <?php
 session_start();
-// var_dump($_SESSION['questions'][$_SESSION['question_number']]);
+require_once "utils/is_connected.php";
+require_once "utils/is_quiz_started.php";
+
 $title = "quiz";
 $backLink = "choice_quiz.php";
 require_once "partials/page_infos.php";

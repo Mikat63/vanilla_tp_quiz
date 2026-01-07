@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once "utils/is_connected.php";
 $title = "Choix du quiz";
 $backLink = "connexion.php";
 

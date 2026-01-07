@@ -1,5 +1,8 @@
 <?php
 session_start();
+require_once "utils/is_connected.php";
+require_once "utils/is_quiz_started.php";
+
 $title = "Score";
 require_once "partials/page_infos.php";
 require_once "process/db_connect.php";
@@ -104,7 +107,7 @@ $userScore = $request->fetch();
             $buttonLink = "choice_quiz.php";
             $ariaDescription = "Revenir au choix du quiz";
             $textButton = "Retour aux quiz";
-            require "partials/start_button.php";  ?>
+            require "partials/start_button.php"; ?>
         </div>
     </div>
 </main>

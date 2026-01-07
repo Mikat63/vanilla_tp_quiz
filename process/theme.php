@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once "../utils/is_connected.php";
 
 // control if exist and int format
 if (!isset($_GET['id'])) {

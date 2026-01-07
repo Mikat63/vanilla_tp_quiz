@@ -1,4 +1,7 @@
 <?php
+require_once "utils/is_connected.php";
+require_once "utils/is_quiz_started.php";
+
 $title = "Accueil";
 $buttonLink = "choice_quiz.php";
 $ariaDescription = "Revenir aux quiz";
