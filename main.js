@@ -4,8 +4,6 @@ const question = document.querySelector("#question");
 const answersBtn = document.querySelectorAll(".answer_btn");
 
 function http_request(questionId, answerId) {
-  console.log("hello");
-
   fetch("process/next_question.php", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -17,7 +15,6 @@ function http_request(questionId, answerId) {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      s;
     });
 }
 
