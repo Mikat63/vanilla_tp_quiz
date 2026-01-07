@@ -3,6 +3,7 @@ const imgQuestion = document.querySelector("#img_question");
 const question = document.querySelector("#question");
 const answersBtn = document.querySelectorAll(".answer_btn");
 
+// fetch ajax function
 function http_request(questionId, answerId) {
   fetch("process/next_question.php", {
     method: "POST",
@@ -18,6 +19,7 @@ function http_request(questionId, answerId) {
     });
 }
 
+// listening answer click
 answersBtn.forEach((answer) => {
   answer.addEventListener("click", () => {
     const answerId = answer.dataset.answer;
@@ -26,6 +28,16 @@ answersBtn.forEach((answer) => {
     http_request(questionId, answerId);
   });
 });
+
+function showResulAnswer(data) {
+  if (data.status === "finished") {
+    window.location.href = "./score.php";
+  }
+
+  if (data.is_correct) {
+    
+  }
+}
 
 // progression bar
 const duration = 10;

@@ -44,12 +44,14 @@ if ((int)$_SESSION['questions'][$_SESSION['question_number']]['id'] !== $dataQue
 }
 
 $is_correct = null;
+$idAnswer = null;
 
 foreach ($_SESSION['questions'][$_SESSION['question_number']]['answers'] as $answer) {
     // if answers exist in question, verify if is correct and if correct update score
     if ((int)$answer['id'] === $dataAnswer) {
-        if ($answer['good_answer'] === 1) {
+        if ((int)$answer['good_answer'] === 1) {
             $is_correct = true;
+            $idAnswer = $answer['id'];
             $_SESSION['score'] += 10;
             break;
         } else {
@@ -73,6 +75,7 @@ if ($_SESSION['question_number'] >= count($_SESSION['questions'])) {
 
 echo json_encode([
     'is_correct' => $is_correct,
+    'id_answer' => $idAnswer,
     'next_question' => $_SESSION['question_number']
 ]);
 exit;
