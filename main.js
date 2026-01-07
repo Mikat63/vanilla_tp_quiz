@@ -1,3 +1,4 @@
+const counterQuestion = document.querySelector("#counter_question");
 const quizContainer = document.querySelector("#quiz_container");
 const imgQuestion = document.querySelector("#img_question");
 const question = document.querySelector("#question");
@@ -32,6 +33,7 @@ answersBtn.forEach((answer) => {
 });
 
 // function to show if answer is correct the button be green and if false red
+//update the next question
 function showResulAnswer(data) {
   if (data.status === "finished") {
     window.location.href = "./score_player.php";
@@ -61,6 +63,30 @@ function showResulAnswer(data) {
       }
     }
   });
+
+  setTimeout(() => {
+    if (quizContainer) {
+      quizContainer.classList.add(
+        "opacity-0",
+        "transition-opacity",
+        "duration-4000"
+      );
+    }
+    setTimeout(() => {
+      quizContainer.classList.remove(
+        "opacity-0",
+        "transition-opacity",
+        "duration-4000"
+      );
+      counterQuestion.textContent = data.next_question;
+      imgQuestion.src = data.img_desktop;
+      imgQuestion.srcset = `${data.img_mobile} 600w, ${data.img_desktop} 1024w`;
+      imgQuestion.sizes = "(max-width: 600px) 600px, 1024px";
+      question.textContent = data.question;
+
+      answersBtn.textContent = data.answers;
+    }, 4000);
+  }, 2000);
 }
 
 // progression bar
