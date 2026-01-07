@@ -16,6 +16,8 @@ function http_request(questionId, answerId) {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
+
+      showResulAnswer(data);
     });
 }
 
@@ -29,14 +31,36 @@ answersBtn.forEach((answer) => {
   });
 });
 
+// function to show if answer is correct the button be green and if false red
 function showResulAnswer(data) {
   if (data.status === "finished") {
-    window.location.href = "./score.php";
+    window.location.href = "./score_player.php";
+    return;
   }
 
-  if (data.is_correct) {
-    
-  }
+  const goodAnswerId = data.id_answer;
+  const clickedAnswerId = data.clicked_answer;
+
+  answersBtn.forEach((answer) => {
+    if (data.is_correct) {
+      if (parseInt(answer.dataset.answer) === parseInt(goodAnswerId)) {
+        answer.classList.remove("bg-[#0879C9]");
+        answer.classList.add("bg-[#1E8717]");
+      }
+    }
+
+    if (!data.is_correct) {
+      if (parseInt(answer.dataset.answer) === parseInt(goodAnswerId)) {
+        answer.classList.remove("bg-[#0879C9]");
+        answer.classList.add("bg-[#1E8717]");
+      }
+
+      if (parseInt(answer.dataset.answer) === parseInt(clickedAnswerId)) {
+        answer.classList.remove("bg-[#0879C9]");
+        answer.classList.add("bg-[#C91D1D]");
+      }
+    }
+  });
 }
 
 // progression bar

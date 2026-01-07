@@ -44,20 +44,24 @@ if ((int)$_SESSION['questions'][$_SESSION['question_number']]['id'] !== $dataQue
 }
 
 $is_correct = null;
-$idAnswer = null;
+$goodAnswerId = null;
 
+// find the good answer
 foreach ($_SESSION['questions'][$_SESSION['question_number']]['answers'] as $answer) {
-    // if answers exist in question, verify if is correct and if correct update score
+    if ((int)$answer['good_answer'] === 1) {
+        $goodAnswerId = $answer['id'];
+        break;
+    }
+}
+
+// Ensuite vérifier celle cliquée
+foreach ($_SESSION['questions'][$_SESSION['question_number']]['answers'] as $answer) {
     if ((int)$answer['id'] === $dataAnswer) {
-        if ((int)$answer['good_answer'] === 1) {
-            $is_correct = true;
-            $idAnswer = $answer['id'];
+        $is_correct = ((int)$answer['good_answer'] === 1);
+        if ($is_correct) {
             $_SESSION['score'] += 10;
-            break;
-        } else {
-            $is_correct = false;
-            break;
         }
+        break;
     }
 }
 
@@ -75,7 +79,8 @@ if ($_SESSION['question_number'] >= count($_SESSION['questions'])) {
 
 echo json_encode([
     'is_correct' => $is_correct,
-    'id_answer' => $idAnswer,
+    'id_answer' => $goodAnswerId,
+    'clicked_answer' => $dataAnswer,
     'next_question' => $_SESSION['question_number']
 ]);
 exit;

@@ -371,8 +371,14 @@
   .border-white {
     border-color: var(--color-white);
   }
+  .bg-\[\#1E8717\] {
+    background-color: #1E8717;
+  }
   .bg-\[\#0879C9\] {
     background-color: #0879C9;
+  }
+  .bg-\[\#C91D1D\] {
+    background-color: #C91D1D;
   }
   .bg-black {
     background-color: var(--color-black);
