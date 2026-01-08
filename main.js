@@ -16,8 +16,6 @@ function http_request(questionId, answerId) {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
-
       showResulAnswer(data);
     });
 }
@@ -28,6 +26,7 @@ answersBtn.forEach((answer) => {
     const answerId = answer.dataset.answer;
     const questionId = answer.dataset.question;
 
+    answer.blur();
     http_request(questionId, answerId);
   });
 });
@@ -35,34 +34,50 @@ answersBtn.forEach((answer) => {
 // function to show if answer is correct the button be green and if false red
 //update the next question
 function showResulAnswer(data) {
+  const goodAnswerId = data.id_answer;
+  const clickedAnswerId = data.clicked_answer;
+  const isSkip = clickedAnswerId === null; // skip_question: pas de réponse cliquée
+
+  if (!isSkip) {
+    answersBtn.forEach((answer) => {
+      if (data.is_correct) {
+        if (parseInt(answer.dataset.answer) === parseInt(goodAnswerId)) {
+          answer.classList.remove("bg-[#0879C9]");
+          answer.classList.add("bg-[#1E8717]");
+        }
+      }
+
+      if (!data.is_correct) {
+        if (parseInt(answer.dataset.answer) === parseInt(goodAnswerId)) {
+          answer.classList.remove("bg-[#0879C9]");
+          answer.classList.add("bg-[#1E8717]");
+        }
+
+        if (parseInt(answer.dataset.answer) === parseInt(clickedAnswerId)) {
+          answer.classList.remove("bg-[#0879C9]");
+          answer.classList.add("bg-[#C91D1D]");
+        }
+      }
+    });
+  }
+
   if (data.status === "finished") {
-    window.location.href = "./score_player.php";
+    setTimeout(() => {
+      if (quizContainer) {
+        quizContainer.classList.add(
+          "opacity-0",
+          "transition-opacity",
+          "duration-4000"
+        );
+      }
+      setTimeout(() => {
+        window.location.href = "./score_player.php";
+      }, 2000);
+    }, 2000);
     return;
   }
 
-  const goodAnswerId = data.id_answer;
-  const clickedAnswerId = data.clicked_answer;
-
-  answersBtn.forEach((answer) => {
-    if (data.is_correct) {
-      if (parseInt(answer.dataset.answer) === parseInt(goodAnswerId)) {
-        answer.classList.remove("bg-[#0879C9]");
-        answer.classList.add("bg-[#1E8717]");
-      }
-    }
-
-    if (!data.is_correct) {
-      if (parseInt(answer.dataset.answer) === parseInt(goodAnswerId)) {
-        answer.classList.remove("bg-[#0879C9]");
-        answer.classList.add("bg-[#1E8717]");
-      }
-
-      if (parseInt(answer.dataset.answer) === parseInt(clickedAnswerId)) {
-        answer.classList.remove("bg-[#0879C9]");
-        answer.classList.add("bg-[#C91D1D]");
-      }
-    }
-  });
+  const feedbackDelay = isSkip ? 0 : 2000;
 
   setTimeout(() => {
     if (quizContainer) {
@@ -73,11 +88,25 @@ function showResulAnswer(data) {
       );
     }
     setTimeout(() => {
+      // delete color btn befor new question
+      answersBtn.forEach((answer) => {
+        answer.classList.remove("bg-[#1E8717]");
+        answer.classList.remove("bg-[#C91D1D]");
+        answer.classList.add("bg-[#0879C9]");
+      });
+
       quizContainer.classList.remove(
         "opacity-0",
         "transition-opacity",
         "duration-4000"
       );
+
+      // stop and restart the timer
+      timerRunning = false;
+      start = null;
+      timerRunning = true;
+      requestAnimationFrame(timer);
+
       counterQuestion.textContent = data.next_question;
       imgQuestion.src = data.img_desktop;
       imgQuestion.srcset = `${data.img_mobile} 600w, ${data.img_desktop} 1024w`;
@@ -85,20 +114,22 @@ function showResulAnswer(data) {
       question.textContent = data.question;
 
       answersBtn.forEach((answerBtn, index) => {
-        console.log(answerBtn, index);
-        console.log(data.answers[index]);
+        answerBtn.dataset.question = data.id_question;
+        answerBtn.dataset.answer = data.answers[index].id;
         answerBtn.textContent = data.answers[index].answer;
       });
-    }, 4000);
-  }, 2000);
+    }, 2000);
+  }, feedbackDelay);
 }
 
 // progression bar
 const duration = 10;
 const bar = document.querySelector("#timer-bar");
 let start = null;
+let timerRunning = true;
 
 function timer(ts) {
+  if (!timerRunning) return;
   if (!start) start = ts;
 
   const elapsed = (ts - start) / 1000;
@@ -117,6 +148,10 @@ function timer(ts) {
         "transition-opacity",
         "duration-4000"
       );
+
+      fetch("process/skip_question.php")
+        .then((response) => response.json())
+        .then((data) => showResulAnswer(data));
     }
   }
 }
