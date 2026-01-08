@@ -104,8 +104,11 @@ function showResulAnswer(data) {
       // stop and restart the timer
       timerRunning = false;
       start = null;
-      timerRunning = true;
-      requestAnimationFrame(timer);
+      bar.style.width = "100%";
+      requestAnimationFrame(() => {
+        timerRunning = true;
+        requestAnimationFrame(timer);
+      });
 
       counterQuestion.textContent = data.next_question;
       imgQuestion.src = data.img_desktop;

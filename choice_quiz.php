@@ -1,5 +1,12 @@
 <?php
 session_start();
+unset(
+    $_SESSION['theme'],
+    $_SESSION['questions'],
+    $_SESSION['question_number'],
+    $_SESSION['score']
+);
+
 require_once "utils/is_connected.php";
 $title = "Choix du quiz";
 $backLink = "connexion.php";
