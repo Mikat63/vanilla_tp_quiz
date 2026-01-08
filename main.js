@@ -72,7 +72,7 @@ function showResulAnswer(data) {
       }
       setTimeout(() => {
         window.location.href = "./score_player.php";
-      }, 2000);
+      }, 4000);
     }, 2000);
     return;
   }

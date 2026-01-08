@@ -69,20 +69,18 @@ if ($is_correct === null) {
 
 $_SESSION['question_number']++;
 
-if ($_SESSION['question_number'] >= count($_SESSION['questions'])) {
-    echo json_encode(['status' => 'finished']);
-    exit();
-}
+$isFinished = $_SESSION['question_number'] >= count($_SESSION['questions']);
 
 echo json_encode([
     'is_correct' => $is_correct,
     'id_answer' => $goodAnswerId,
     'clicked_answer' => $dataAnswer,
+    'status' => $isFinished ? 'finished' : 'next',
     'next_question' => $_SESSION['question_number'] + 1 . '/' . count($_SESSION['questions']),
-    'id_question' => $_SESSION['questions'][$_SESSION['question_number']]['id'],
-    'question' => $_SESSION['questions'][$_SESSION['question_number']]['question'],
-    'img_mobile' => $_SESSION['questions'][$_SESSION['question_number']]['img_path_mobile'],
-    'img_desktop' => $_SESSION['questions'][$_SESSION['question_number']]['img_path_desktop'],
-    'answers' => $_SESSION['questions'][$_SESSION['question_number']]['answers']
+    'id_question' => $isFinished ? null : $_SESSION['questions'][$_SESSION['question_number']]['id'],
+    'question' => $isFinished ? null : $_SESSION['questions'][$_SESSION['question_number']]['question'],
+    'img_mobile' => $isFinished ? null : $_SESSION['questions'][$_SESSION['question_number']]['img_path_mobile'],
+    'img_desktop' => $isFinished ? null : $_SESSION['questions'][$_SESSION['question_number']]['img_path_desktop'],
+    'answers' => $isFinished ? null : $_SESSION['questions'][$_SESSION['question_number']]['answers']
 ]);
 exit;
